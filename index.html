@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Goutam Chatterjee Gynaecologist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0066cc;
+            --primary-dark: #004999;
+            --primary-light: #e6f0ff;
+            --secondary-color: #00d4ff;
+            --accent-color: #ff6b6b;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "⚕️";
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+        }
+
+        .hero-image {
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: slideInRight 0.8s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Tabs Section */
+        .tabs-section {
+            padding: 4rem 2rem;
+            background: var(--bg-white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .tabs-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--border-color);
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+        
+        .tabs-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome/Safari */
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            border: none;
+            background: transparent;
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .tab-button:hover {
+            color: var(--primary-color);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: grid;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Doctor Cards */
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .doctor-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .doctor-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .doctor-card:hover .doctor-image img {
+            transform: scale(1.05);
+        }
+
+        .doctor-info {
+            padding: 2rem;
+        }
+
+        .doctor-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .doctor-specialty {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .doctor-details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .doctor-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-details strong {
+            color: var(--text-dark);
+        }
+
+        .view-profile {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .view-profile:hover {
+            color: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        /* Chamber Section */
+        .chamber-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .chamber-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .chamber-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .chamber-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chamber-image {
+            width: 100%;
+            height: 60%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .chamber-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .chamber-info {
+            padding: 1.5rem;
+        }
+
+        .chamber-address {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                height: 300px;
+                order: -1; /* Move image above text on mobile */
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .doctors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .tabs-container {
+                padding: 0.5rem 0;
+            }
+
+            .tab-button {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .chamber-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .chamber-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo {
+                font-size: 1.5rem;
+            }
+            nav a {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            --text-dark: #f0f0f0;
+            --text-light: #b0b0b0;
+            --bg-light: #1a1a1a;
+            --bg-white: #2a2a2a;
+            --border-color: #404040;
+        }
+
+        body.dark-mode .doctor-card,
+        body.dark-mode .service-card,
+        body.dark-mode .chamber-card .chamber-info {
+            background: var(--bg-white);
+        }
+
+        /* 3D Effects and Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 102, 204, 0.8);
+            }
+        }
+
+        .doctor-card {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .cta-button {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Dr. Goutam Chatterjee Gynaecologist MBBS MS (G&O)</div>
+            <nav>
+                <a onclick="scrollToSection('home')">Home</a>
+                <a onclick="scrollToSection('chambers')">Our Chambers</a>
+                <a onclick="scrollToSection('nursing home')">Attached to</a>
+                <a onclick="scrollToSection('services')">Services</a>
+                <a onclick="scrollToSection('contact')">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Consultant Obstetrician and Gynaecologist.Burdwan Medical college and hospital</h1>
+                <p>REG. NO.: 66952 (WBMC)</p>
+                <button class="cta-button" onclick="scrollToSection('chambers')"> Our Chambers</button>
+            </div>
+            <div class="hero-image">
+                <img src="photo 1.jpeg" alt="Doctor Photo" class="hero-photo">
+            </div>
+                    <defs>
+                        <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0066cc;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="200" cy="150" r="80" fill="url(#docGrad)" opacity="0.8"/>
+                    <rect x="150" y="220" width="100" height="120" rx="10" fill="url(#docGrad)" opacity="0.6"/>
+                    <circle cx="180" cy="140" r="15" fill="#fff" opacity="0.9"/>
+                    <circle cx="220" cy="140" r="15" fill="#fff" opacity="0.9"/>
+                    <path d="M 190 160 Q 200 170 210 160" stroke="#fff" stroke-width="3" fill="none" opacity="0.9"/>
+                    <text x="200" y="380" font-size="24" text-anchor="middle" fill="#fff" font-weight="bold">Dr. Goutam Chatterjee</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Patients Treated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Chambers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Patient Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Chambers Section -->
+    <section class="tabs-section" id="chambers">
+        <div class="container">
+            <h2 class="section-title">Our Chambers</h2>
+<div class="chamber-section">
+                                <div class="chamber-title">Chamber Details</div>
+                                <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                        <div class="chamber-image">
+                                            <img src="photo 2.jpeg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                                <defs>
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>Heart Care Doctors Chamber</strong><br>
+                                                Joteram,Gangpur,Purba Burdwan(Opposite to Joteram Vidyapith High School)<br>
+                                                Phone: +91 9564723569/6294582797<br>
+                                                Hours: Tuesday 4PM-8PM
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="chamber-section">
+                                <div class="chamber-title">Chamber Details</div>
+                                <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                        <div class="chamber-image">
+                                             <img src="photo 11.jpg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                                <defs>
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>Sagarika Polyclinic</strong><br>
+                                                Khosbagan,Burdwan<br>
+                                                Phone: +91 7699683377<br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="chamber-section">
+                                <div class="chamber-title">Chamber Details</div>
+                                <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                        <div class="chamber-image">
+                                           <img src="photo 8.jpg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                                <defs>
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>Bakshi Polyclinic and Diagonastics</strong><br>
+                                                Khosbagan,Burdwan<br>
+                                                Phone: +91 9593450377<br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="chamber-section">
+                                <div class="chamber-title">Chamber Details</div>
+                                <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                        <div class="chamber-image">
+                                            <img src="photo 10.jpg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                                <defs>
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>Jiban Suraksha Doctor's Clinic</strong><br>
+                                                Khosbagan,Burdwan<br>
+                                                Phone: +91 9564723569<br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+           
+
+
+        </div>
+    </section>
+<!-- Nursing Homes Section -->
+    <section class="tabs-section" id="nursing home">
+        <div class="container">
+            <h2 class="section-title">Attached to </h2>
+<div class="chamber-section">
+                                <div class="chamber-title">Nursing Home Details</div>
+                                   <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                    <div class="chamber-image">
+                                    <img src="photo 3.jpeg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                        
+                                                <defs>
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>Burdwan Medical College and Hospital</strong><br>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="chamber-section">
+                                <div class="chamber-title">Nursing Home Details</div>
+                                <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                        <div class="chamber-image">
+                                        <img src="photo 4.jpeg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                            
+                                            
+                                                <defs>
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>Spandan Nursing Home(Seharabazaar)</strong><br>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="chamber-section">
+                                <div class="chamber-title">Nursing Home Details</div>
+                                <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                        <div class="chamber-image">
+                                        <img src="photo 5.jpeg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                            
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>H.K. Nursing Home(Burdwan)</strong><br>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="chamber-section">
+                                <div class="chamber-title">Nursing Home Details</div>
+                                <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                        <div class="chamber-image">
+                                        <img src="photo 6.jpeg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                            
+                                                <defs>
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>Adarsha Nursing Home(Burdwan)</strong><br>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="chamber-section">
+                                <div class="chamber-title">Nursing Home Details</div>
+                                <div class="chamber-grid">
+                                    <div class="chamber-card">
+                                        <div class="chamber-image">
+                                        <img src="photo 7.jpeg" alt="Chamber Photo" class="chamber-photo">
+                                        </div>
+                                            
+                                                <defs>
+                                                    <linearGradient id="chamberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <rect width="300" height="200" fill="url(#chamberGrad1)"/>
+                                                <rect x="20" y="30" width="260" height="140" fill="#fff" opacity="0.2" rx="5"/>
+                                                <circle cx="80" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="150" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                                <circle cx="220" cy="80" r="15" fill="#fff" opacity="0.6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chamber-info">
+                                            <div class="chamber-address">
+                                                <strong>Jivandeep Nursing Home(Burdwan)</strong><br>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="view-profile">View Full Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            
+            
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <div class="service-title">Menstural Disorders</div>
+                    <div class="service-description">Irregular cycles,heavy bleeding,and severe painful periods.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <div class="service-title">Hormonal Imbalances</div>
+                    <div class="service-description">Polycystic ovary syndrome(PCOS),thyroid disordes,and symptoms of menopause.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💊</div>
+                    <div class="service-title">Infections</div>
+                    <div class="service-description">Vaginal infections,bacterial vaginosis,and sexually transmitted infections.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧬</div>
+                    <div class="service-title">Chronic Pain</div>
+                    <div class="service-description">Endometriosis,uterine fibroids,ovariancysts,and pelvic inflammatory disease.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏃</div>
+                    <div class="service-title">Pelvic Floor Dysfunction</div>
+                    <div class="service-description">Urinary incontinence or organ prolapse.</div>
+                </div>
+                 <div class="service-card">
+                    <div class="service-icon">👨‍⚕️</div>
+                    <div class="service-title">Fertility and Reproductive care</div>
+                    <div class="service-description">Expert Guidance on Contraception and treatment for infertility.</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="tabs-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div style="text-align: center; color: var(--text-light);">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                    Have questions? We're here to help. Contact us today!
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📞 Phone</h3>
+                        <p>+91 9800595086</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📧 Email</h3>
+                        <p>chatterjeegoutam085@gmail.com</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📍 Address</h3>
+                        <p>Joteram,Gangpur,Purba Burdwan(Opposite to Joteram Vidyapith High School)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+            <p>&copy; 2026 Elite Medical Care. All rights reserved. | Providing World-Class Healthcare Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching
+        function switchTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab
+            const selectedTab = document.getElementById(tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Smooth Scroll Navigation
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Dark Mode Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const button = event.target;
+            if (document.body.classList.contains('dark-mode')) {
+                button.textContent = '☀️ Light';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                button.textContent = '🌙 Dark';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️ Light';
+            }
+        });
+
+        // Add smooth scroll behavior for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.doctor-card, .service-card, .stat-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
